@@ -1,0 +1,15 @@
+.background {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%),url("/bgevent.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: 50%;
+}
+
+@media (max-width: 768px) {
+    .background {
+        background-attachment: scroll;
+    }
+}
