@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { Events } from "@/components/constants";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface Event {
   title: string;
@@ -84,7 +85,7 @@ export default function EventsSection() {
           )}
 
           <div
-            className="flex flex-row justify-start p-4 md:p-8 gap-6 overflow-x-scroll scrollbar-hide max-w-full"
+            className="flex flex-row justify-start p-4 md:pl-28 md:p-8 gap-6 overflow-x-scroll scrollbar-hide max-w-full"
             ref={containerRef}
           >
             {Events.map((event, index) => (
@@ -101,42 +102,44 @@ export default function EventsSection() {
 
 const EventCard = ({ event, index }: { event: Event; index: number }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{
-        y: -10,
-        boxShadow:
-          "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-      }}
-      className="bg-gradient-to-br from-[#10201F] to-[#237A75] overflow-hidden flex flex-col items-center flex-shrink-0 cursor-pointer rounded-xl w-[280px] h-[380px] p-4"
-    >
-      <div className="bg-white h-[160px] w-full rounded-xl flex justify-center items-center mb-4">
-        <span className="text-black font-medium">PHOTO</span>
-      </div>
-      <div className="text-left w-full text-white">
-        <div className="space-y-3">
-          <div>
-            <h3 className="text-2xl font-bold">{event.title}</h3>
-            <p className="text-white/60 text-sm">{event.school}</p>
-          </div>
+    <Link href={`/event/${index + 1}`}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        whileHover={{
+          y: -10,
+          boxShadow:
+            "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+        }}
+        className="bg-gradient-to-br from-[#10201F] to-[#237A75] overflow-hidden flex flex-col items-center flex-shrink-0 cursor-pointer rounded-xl w-[280px] h-[380px] p-4"
+      >
+        <div className="bg-white h-[160px] w-full rounded-xl flex justify-center items-center mb-4">
+          <span className="text-black font-medium">PHOTO</span>
+        </div>
+        <div className="text-left w-full text-white">
+          <div className="space-y-3">
+            <div>
+              <h3 className="text-2xl font-bold">{event.title}</h3>
+              <p className="text-white/60 text-sm">{event.school}</p>
+            </div>
 
-          <div className="space-y-1">
-            <p>{event.date}</p>
-            <p>{event.address}</p>
-          </div>
+            <div className="space-y-1">
+              <p>{event.date}</p>
+              <p>{event.address}</p>
+            </div>
 
-          <p className="font-semibold">Rs. {event.amount}</p>
+            <p className="font-semibold">Rs. {event.amount}</p>
 
-          <div>
-            <p className="font-medium">Group</p>
-            <p className="text-white/60 text-sm">
-              Contact: {event.organisersname} {event.contact}
-            </p>
+            <div>
+              <p className="font-medium">Group</p>
+              <p className="text-white/60 text-sm">
+                Contact: {event.organisersname} {event.contact}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 };

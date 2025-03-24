@@ -50,7 +50,7 @@ function SheetContent({
   side = "right",
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Content> & {
-  side?: "top" | "right" | "bottom" | "left"
+  side?: "top" | "right" | "bottom" | "left";
 }) {
   return (
     <SheetPortal>
@@ -71,15 +71,20 @@ function SheetContent({
         )}
         {...props}
       >
+        {/* Ensure the sheet has a title for accessibility */}
+        <SheetTitle>Sheet Title</SheetTitle>
+
         {children}
+
         <SheetPrimitive.Close className="text-white ring-offset-background data-[state=open]:bg-secondary absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 disabled:pointer-events-none">
           <XIcon className="size-6" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>
       </SheetPrimitive.Content>
     </SheetPortal>
-  )
+  );
 }
+
 
 function SheetHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
