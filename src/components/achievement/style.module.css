@@ -1,0 +1,9 @@
+.background {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.663) 70%, rgb(0, 0, 0, 1) 100%), url("/DALL.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: 50%;
+}
