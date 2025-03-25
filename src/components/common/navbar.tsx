@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <>
       <motion.nav
-        className="h-18 w-full z-30 bg-transparent fixed hidden md:flex"
+        className="h-20 w-full z-30 bg-transparent fixed hidden md:flex"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
