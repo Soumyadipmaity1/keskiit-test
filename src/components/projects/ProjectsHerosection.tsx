@@ -20,14 +20,14 @@ export default function ProjectsHeroSection() {
   }, [])
 
   return (
-    <div className="relative w-full overflow-hidden bg-gradient-to-tr from-[#001428] via-[#002a4e] to-[#004d5d] py-12 sm:py-16 md:py-24">
+    <div className="relative w-full overflow-hidden bg-gradient-to-tr  from-[#001428] via-[#002a4e] to-[#004d5d] py-12 sm:py-16 md:py-24">
       {/* Abstract shapes for modern feel */}
       <div className="absolute top-0 left-0 w-full h-full opacity-20">
         <div className="absolute top-10 left-10 w-20 h-20 md:w-40 md:h-40 rounded-full bg-teal-500 blur-3xl"></div>
         <div className="absolute bottom-10 right-10 w-20 h-20 md:w-40 md:h-40 rounded-full bg-blue-500 blur-3xl"></div>
       </div>
       
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 pt-20 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-24">
           <div className="text-center md:text-left max-w-xs sm:max-w-sm md:max-w-md">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight">
