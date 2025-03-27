@@ -7,7 +7,7 @@ export default function Header() {
         className={`${styles.background} w-full min-h-screen flex justify-center items-center py-20 flex-col`}
       >
         <div className="font-extrabold text-6xl md:text-7xl leading-[102px] text-center">
-          ABOUT <span className="text-red-600">US</span>
+          Achievements
         </div>
       </div>
     </div>
