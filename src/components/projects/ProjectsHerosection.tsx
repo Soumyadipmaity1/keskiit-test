@@ -1,23 +1,23 @@
 "use client"
 
 import Image from "next/image"
-import { useEffect, useState } from "react"
+// import { useEffect, useState } from "react"
 
 export default function ProjectsHeroSection() {
-  const [isMobile, setIsMobile] = useState(false)
+  // const [isMobile, setIsMobile] = useState(false)
 
-  useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
+  // useEffect(() => {
+  //   const checkIfMobile = () => {
+  //     setIsMobile(window.innerWidth < 768)
+  //   }
 
-    checkIfMobile()
-    window.addEventListener("resize", checkIfMobile)
+  //   checkIfMobile()
+  //   window.addEventListener("resize", checkIfMobile)
 
-    return () => {
-      window.removeEventListener("resize", checkIfMobile)
-    }
-  }, [])
+  //   return () => {
+  //     window.removeEventListener("resize", checkIfMobile)
+  //   }
+  // }, [])
 
   return (
     <div className="relative w-full overflow-hidden bg-gradient-to-tr  from-[#001428] via-[#002a4e] to-[#004d5d] py-12 sm:py-16 md:py-24">
