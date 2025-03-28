@@ -38,7 +38,7 @@ export default function ProjectsHeroSection() {
               </span>
             </h2>
             <div className="inline-block bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 shadow-lg transition-all duration-300 hover:bg-white/15">
-              <p className="text-teal-200 text-sm md:text-base font-medium">"Build Small. Think Big"</p>
+              <p className="text-teal-200 text-sm md:text-base font-medium">&ldquo;Build Small. Think Big&rdquo;</p>
             </div>
           </div>
 
