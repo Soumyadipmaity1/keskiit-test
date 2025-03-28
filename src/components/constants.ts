@@ -23,7 +23,7 @@ export const navLinks: NavLinkProps[] = [
     {
         id: 4,
         name: "Projects",
-        href: "/project"
+        href: "/projects"
     },
     {
         id: 5,
