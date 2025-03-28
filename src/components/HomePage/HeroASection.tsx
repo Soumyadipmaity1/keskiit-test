@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from 'next/image'
 
 export default function KiitHero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -54,12 +55,10 @@ export default function KiitHero() {
             </h1>
             <p className="text-xl md:text-2xl text-yellow-300 mt-8 font-light tracking-wide">"Build Small, Think Big"</p>
           </div>
-          <div className="hidden md:block">
-            <img src="/hero-image.png" alt="KIIT Electrical Society" className="max-h-[500px] object-contain" />
+            <Image src="/hero-image.png" alt="KIIT Electrical Society" width={500} height={500} className="object-contain" />
           </div>
         </div>
-      </div>
-
+      
       {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden">
         {Array.from({ length: 20 }).map((_, i) => (
