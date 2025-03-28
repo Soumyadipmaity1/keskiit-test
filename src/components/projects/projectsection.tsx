@@ -5,10 +5,37 @@ import { motion, AnimatePresence, LayoutGroup } from "framer-motion"
 import { Github, Instagram, Twitter } from "lucide-react"
 import Image from "next/image"
 
+// Types for individual projects
+interface UserInfo {
+  name: string;
+  role: string;
+  avatar: string;
+}
+
+interface IndividualProject {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  user: UserInfo;
+}
+
+// Type for group projects
+interface GroupProject {
+  id: number;
+  name: string;
+  image: string;
+  aim: string;
+  about: string;
+  documentation: string;
+  application: string;
+  team: string[];
+}
+
 export default function ProjectGallery() {
   const [activeTab, setActiveTab] = useState("individual")
 
-  const individualProjects = [
+  const individualProjects: IndividualProject[] = [
     {
       id: 1,
       name: "PROJECT NAME",
@@ -77,7 +104,7 @@ export default function ProjectGallery() {
     },
   ]
 
-  const groupProjects = [
+  const groupProjects: GroupProject[] = [
     {
       id: 1,
       name: "PROJECT NAME",
@@ -154,7 +181,13 @@ export default function ProjectGallery() {
   )
 }
 
-function TabButton({ isActive, onClick, label }) {
+interface TabButtonProps {
+  isActive: boolean;
+  onClick: () => void;
+  label: string;
+}
+
+function TabButton({ isActive, onClick, label }: TabButtonProps) {
   return (
     <motion.button
       onClick={onClick}
@@ -169,7 +202,11 @@ function TabButton({ isActive, onClick, label }) {
   )
 }
 
-function IndividualProjectCard({ project }) {
+interface IndividualProjectCardProps {
+  project: IndividualProject;
+}
+
+function IndividualProjectCard({ project }: IndividualProjectCardProps) {
   return (
     <motion.div
       layout
@@ -249,7 +286,11 @@ function IndividualProjectCard({ project }) {
   )
 }
 
-function GroupProjectCard({ project }) {
+interface GroupProjectCardProps {
+  project: GroupProject;
+}
+
+function GroupProjectCard({ project }: GroupProjectCardProps) {
   return (
     <motion.div
       layout
@@ -299,7 +340,12 @@ function GroupProjectCard({ project }) {
   )
 }
 
-function DescriptionItem({ title, content }) {
+interface DescriptionItemProps {
+  title: string;
+  content: string;
+}
+
+function DescriptionItem({ title, content }: DescriptionItemProps) {
   return (
     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3 }}>
       <h4 className="text-sm font-semibold text-[#3a8a88]">{title}</h4>
@@ -308,7 +354,11 @@ function DescriptionItem({ title, content }) {
   )
 }
 
-function SocialIcon({ icon }) {
+interface SocialIconProps {
+  icon: React.ReactNode;
+}
+
+function SocialIcon({ icon }: SocialIconProps) {
   return (
     <motion.div
       className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-white/80 hover:bg-white/20 hover:text-white cursor-pointer"
