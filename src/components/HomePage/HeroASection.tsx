@@ -53,7 +53,7 @@ export default function KiitHero() {
               <div className="text-5xl md:text-6xl lg:text-7xl">SOCIETY</div>
 
             </h1>
-            <p className="text-xl md:text-2xl text-yellow-300 mt-8 font-light tracking-wide">"Build Small, Think Big"</p>
+            <p className="text-xl md:text-2xl text-yellow-300 mt-8 font-light tracking-wide">&quot;Build Small, Think Big&quot;</p>
           </div>
             <Image src="/hero-image.png" alt="KIIT Electrical Society" width={500} height={500} className="object-contain" />
           </div>
