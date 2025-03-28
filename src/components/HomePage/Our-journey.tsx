@@ -70,14 +70,3 @@
 //   }
   
   
-import React from 'react'
-
-function Our-journey() {
-  return (
-    <div>
-      hello
-    </div>
-  )
-}
-
-export default Our-journey
