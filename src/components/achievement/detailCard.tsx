@@ -10,15 +10,15 @@ const detail = [
     title: "WINNER, KAIROS",
     tag: "KIIT FEST 7.0 || KIIT UNIVERSITY || FEBRUARY,2024",
     description:
-      "Led by Shivansh Mishra, the team comprising Soumyadip Maity, Devaansh Saxena, and Arnav Sharma secured the top prize at the Kairos Industrial IoT Presentation during KIIT FEST 7.0. ",
+      "Led by Shivansh Mishra, the team comprising Soumyadip Maity, Devaansh Saxena, and Arnav Sharma secured the top prize at the Kairos Industrial IoT Presentation during KIIT FEST 7.0.",
     image: "Phatooo",
   },
   {
     id: 2,
     title: "RUNNER UP,TECH TANK",
-    tag: "SYNCHRONISE 2.0 || XIM UNIVERSITY || FEBRUARY ‘24",
+    tag: "SYNCHRONISE 2.0 || XIM UNIVERSITY || FEBRUARY &rsquo;24",
     description:
-      "KES team with leader Dev Dashora and members Shyam Barua, Sweta kumari secured the runner’s-up position at the Tech Tank event, which was held during XIM University's annual event, Synchronize 2.0.",
+      "KES team with leader Dev Dashora and members Shyam Barua, Sweta kumari secured the runner&rsquo;s-up position at the Tech Tank event, which was held during XIM University's annual event, Synchronize 2.0.",
     image: "Phatooo",
   },
   {
@@ -26,7 +26,7 @@ const detail = [
     title: "2nd Runner-Up, Game Fest",
     tag: "KSHITIJ || IIT KGP || JANUARY 2024",
     description:
-      "We participated in the Gamefest at IIT Kharagpur Kshitij 2024, competing with players from various colleges over three exhilarating days. Despite securing the 2nd runner-up position, the event was unforgettable. ",
+      "We participated in the Gamefest at IIT Kharagpur Kshitij 2024, competing with players from various colleges over three exhilarating days. Despite securing the 2nd runner-up position, the event was unforgettable.",
     image: "Phatooo",
   },
 ];
