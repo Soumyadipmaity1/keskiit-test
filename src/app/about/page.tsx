@@ -25,7 +25,7 @@ function page() {
           <div className="bg-[#407E73] h-[100px] w-[4px]"> </div>
         </div>
         <div>
-          <Team/>
+          <Team />
         </div>
         <div>Mera Naam</div>
       </div>

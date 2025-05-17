@@ -66,7 +66,7 @@ export default function Team() {
         <hr className="w-full my-5" />
 
         <div
-          className={`${comic_neue.className} w-full flex gap-10  px-10 mb-5`}
+          className={`${comic_neue.className} w-full flex flex-wrap gap-10  px-10 mb-5`}
         >
           <button
             onClick={() => hanldeClick("corrdinator")}

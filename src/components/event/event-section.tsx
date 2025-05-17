@@ -17,88 +17,30 @@ interface Event {
 }
 
 export default function EventsSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const handleScroll = () => {
-    const container = containerRef.current;
-    if (container) {
-      const { scrollLeft, scrollWidth, clientWidth } = container;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
-    }
-  };
-
-  const scrollByAmount = (amount: number) => {
-    const container = containerRef.current;
-    if (container) {
-      container.scrollBy({ left: amount, behavior: "smooth" });
-    }
-  };
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener("scroll", handleScroll);
-      handleScroll(); // Initial check
-
-      return () => {
-        container.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, []);
-
   return (
-    <div className="py-10 w-full">
-      <motion.div
-        className="relative flex flex-col justify-center items-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        <div className="flex justify-center items-center w-full relative">
-          {canScrollLeft && (
-            <motion.button
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="absolute left-4 z-10 text-white p-3 rounded-full border border-white/20 bg-black/50 backdrop-blur-sm"
-              onClick={() => scrollByAmount(-300)}
-            >
-              <ArrowLeft className="w-5 h-5" />
-            </motion.button>
-          )}
-
-          {canScrollRight && (
-            <motion.button
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="absolute right-4 z-10 text-white p-3 rounded-full border border-white/20 bg-black/50 backdrop-blur-sm"
-              onClick={() => scrollByAmount(300)}
-            >
-              <ArrowRight className="w-5 h-5" />
-            </motion.button>
-          )}
-
-          <div
-            className="flex flex-row justify-start p-4 md:pl-28 md:p-8 gap-6 overflow-x-scroll scrollbar-hide max-w-full"
-            ref={containerRef}
-          >
-            {Events.map((event, index) => (
-              <div key={index} style={{ scrollSnapAlign: "start" }}>
-                <EventCard event={event} index={index} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
+    <div className="mt-10">
+      <div>
+        <h1 className="text-xl text-white px-4 md:pl-28 font-bold tracking-wider">
+          Ongoing Events
+        </h1>
+        <Container />
+      </div>
+      <div>
+        <h1 className="text-xl text-white px-4 md:pl-28 font-bold tracking-wider">
+          Upcoming Events
+        </h1>
+        <Container />
+      </div>
+      <div>
+        <h1 className="text-xl text-white px-4 md:pl-28 font-bold tracking-wider">
+          Past Events
+        </h1>
+        <Container />
+      </div>
     </div>
   );
 }
+
 
 const EventCard = ({ event, index }: { event: Event; index: number }) => {
   return (
@@ -141,5 +83,88 @@ const EventCard = ({ event, index }: { event: Event; index: number }) => {
         </div>
       </motion.div>
     </Link>
+  );
+};
+
+const Container = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const handleScroll = () => {
+    const container = containerRef.current;
+    if (container) {
+      const { scrollLeft, scrollWidth, clientWidth } = container;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
+    }
+  };
+
+  const scrollByAmount = (amount: number) => {
+    const container = containerRef.current;
+    if (container) {
+      container.scrollBy({ left: amount, behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("scroll", handleScroll);
+      handleScroll();
+
+      return () => {
+        container.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, []);
+  return (
+    <div className="w-full">
+      <motion.div
+        className="relative flex flex-col justify-center items-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <div className="flex justify-center items-center w-full relative">
+          {canScrollLeft && (
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="absolute left-4 z-10 text-white p-3 rounded-full border border-white/20 bg-black/50 backdrop-blur-sm"
+              onClick={() => scrollByAmount(-300)}
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </motion.button>
+          )}
+
+          {canScrollRight && (
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="absolute right-4 z-10 text-white p-3 rounded-full border border-white/20 bg-black/50 backdrop-blur-sm"
+              onClick={() => scrollByAmount(300)}
+            >
+              <ArrowRight className="w-5 h-5" />
+            </motion.button>
+          )}
+
+          <div
+            className="flex flex-row justify-start p-4 px-10 md:pl-28 md:p-8 gap-6 overflow-x-scroll scrollbar-hide max-w-full"
+            ref={containerRef}
+          >
+            {Events.map((event, index) => (
+              <div key={index} style={{ scrollSnapAlign: "start" }}>
+                <EventCard event={event} index={index} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </div>
   );
 };

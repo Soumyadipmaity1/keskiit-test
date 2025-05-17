@@ -23,10 +23,10 @@ export default function ModelCard({ card }: CardProps) {
       {card.map((item, index: number) => (
         <Card
           key={index}
-          className="bg-[#D9D9D9] backdrop-blur-md p-6 rounded-xl border border-white/20 shadow-lg transition-all duration-300 "
+          className="bg-[#D9D9D9] backdrop-blur-md p-6 rounded-xl border border-white/20 shadow-lg transition-all duration-300 w-full mx-5 max-w-[300px]"
         >
-          <div className="w-[300px] h-[200px] flex justify-center items-center rounded-2xl overflow-hidden bg-[#999999]">
-            Phaaatooooooooooooo
+          <div className="w-full h-[200px] flex justify-center items-center rounded-2xl overflow-hidden bg-[#999999]">
+            Phaaatoooo
           </div>
           <div className={`flex flex-col gap-1 ${crete_round.className}`}>
             <p className="text-sm font-bold">NAME: {item.name}</p>

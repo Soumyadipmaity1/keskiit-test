@@ -40,7 +40,7 @@ export default function Gallery() {
                 }`}
               >
                 <Image
-                  src={``}
+                  src={`/hero-image.png`}
                   alt={`Gallery image ${num}`}
                   width={400}
                   height={300}
@@ -53,7 +53,7 @@ export default function Gallery() {
           <div className="grid grid-cols-6 grid-rows-5 gap-4 text-white  w-full h-full md:gap-4">
             <div className="bg-white rounded-xl ">
               <Image
-                src=""
+                src="/hero-image.png"
                 alt="Gallery image 1"
                 width={400}
                 height={300}
@@ -63,7 +63,7 @@ export default function Gallery() {
 
             <div className="bg-white rounded-xl col-span-3">
               <Image
-                src=""
+                src="/hero-image.png"
                 alt="Gallery image 1"
                 width={800}
                 height={300}
@@ -72,7 +72,7 @@ export default function Gallery() {
             </div>
             <div className="bg-white rounded-xl col-span-2 row-span-2 col-start-5">
               <Image
-                src=""
+                src="/hero-image.png"
                 alt="Gallery image 1"
                 width={500}
                 height={600}
@@ -81,7 +81,7 @@ export default function Gallery() {
             </div>
             <div className="bg-white rounded-xl col-span-2 row-span-3 col-start-5 row-start-3">
               <Image
-                src=""
+                src="/hero-image.png"
                 alt="Gallery image 1"
                 width={500}
                 height={900}
@@ -90,7 +90,7 @@ export default function Gallery() {
             </div>
             <div className="bg-white rounded-xl col-span-3 row-span-4 col-start-2 row-start-2">
               <Image
-                src=""
+                src="/hero-image.png"
                 alt="Gallery image 1"
                 width={800}
                 height={1200}
@@ -99,7 +99,7 @@ export default function Gallery() {
             </div>
             <div className="bg-white rounded-xl row-span-2 col-start-1 row-start-2">
               <Image
-                src=""
+                src="/hero-image.png"
                 alt="Gallery image 1"
                 width={300}
                 height={600}
@@ -108,7 +108,7 @@ export default function Gallery() {
             </div>
             <div className="bg-white rounded-xl row-span-2 row-start-4">
               <Image
-                src=""
+                src="/hero-image.png"
                 alt="Gallery image 1"
                 width={300}
                 height={600}
