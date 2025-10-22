@@ -1,6 +1,6 @@
 import EventHighlights from '@/components/HomePage/event-highlights'
 import GuidingPillars from '@/components/HomePage/GuidingPillers'
-import KiitHero from '@/components/HomePage/HeroASection'
+import { HeroSection } from '@/components/HomePage/HeroASection'
 import NoticeboardComponent from '@/components/HomePage/noticeboard'
 // import OurJourney from '@/components/HomePage/Our-journey'
 import StatisticsComponent from '@/components/HomePage/Statistics'
@@ -10,7 +10,7 @@ import React from 'react'
 function page() {
   return (
     <div className='w-full'>
-      <KiitHero/>
+      <HeroSection/>
       <StatisticsComponent/>
       <NoticeboardComponent/>
       <EventHighlights/>
